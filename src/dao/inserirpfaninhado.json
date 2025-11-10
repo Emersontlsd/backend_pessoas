@@ -1,0 +1,22 @@
+{
+    "nome": "Emerson Souza ",
+    "email": "emersontlsd@gmail.com",
+    "cpf": "12345678903",
+    "endereco": {
+      "cep": "72215213",
+      "logradouro": "QNM 21 CONJUNTO C",
+      "bairro": "Centro",
+      "cidade": "Brasília",
+      "uf": "DF",
+      "regiao": "Centro-Oeste"
+    },
+    "telefones": [
+      { "ddd": "61", "numero": "982858372" }
+    ],
+    "titulo": {
+      "numero": "123456",
+      "zona": "001",
+      "secao": "002"
+    }
+  }
+  
