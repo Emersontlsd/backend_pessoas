@@ -11,6 +11,24 @@ export default class PJDAO {
       .populate('ie');
   }
 
+  async listarPorId(id) {
+    try {
+      const pj = await PJ.findById(id)
+        .populate("endereco")
+        .populate("telefones")
+        .populate("ie");
+
+      if (!pj) {
+        throw new Error("PJ não encontrada ");
+      }
+
+      return pj;
+    } catch (err) {
+      console.error("❌ Erro ao encontrar PJ:", err.message);
+      throw err;
+    }
+  }
+
   async salvar(pjData) {
     try {
       // 🔹 Cria Endereco se veio como objeto
