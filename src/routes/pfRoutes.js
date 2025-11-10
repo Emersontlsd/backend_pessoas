@@ -8,6 +8,17 @@ router.get('/', async (req, res) => {
   res.json(await dao.listar());
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const pf = await dao.listarPorId(id);
+    res.json(pf);
+  } catch (err) {
+    console.error("❌ Erro: Usuário inexistente", err.message);
+    res.status(404).json({ erro: err.message });
+  }
+});
+
 router.post('/', async (req, res) => {
   res.status(201).json(await dao.salvar(req.body));
 });
